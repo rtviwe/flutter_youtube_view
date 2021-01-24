@@ -15,7 +15,7 @@ class FlutterYoutubeViewPlugin(registrar: Registrar): Application.ActivityLifecy
         registrarActivityHashCode = registrar.activity().hashCode()
     }
 
-    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle) {
+    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         if (activity.hashCode() != registrarActivityHashCode) {
             return
         }
@@ -58,7 +58,7 @@ class FlutterYoutubeViewPlugin(registrar: Registrar): Application.ActivityLifecy
         state.set(Lifecycle.Event.ON_DESTROY)
     }
 
-    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle?) {
+    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
     }
 
     companion object {
